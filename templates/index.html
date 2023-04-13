@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Stripe e Flask Demo</title>
+    <style>
+      table {
+        border: 1px solid black;
+      }
+      table th {
+        padding: 10px;
+        background: #ddd;
+      }
+      table td {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Integração Stripe e Flask Demo</h1>
+    <table>
+      <tr>
+        <th>Produto</th>
+        <th>Preço</th>
+        <th>Pedido</th>
+      </tr>
+      {% for id in products %}
+      <tr>
+        <td>{{ products[id].name }}</td>
+        <td>
+          {{ "%.2f"|format(products[id].price / 100) }} R$
+          {% if products[id].por %}por {{ products[id].por }}{% endif %}</td>
+        <td>
+          <form method="POST" action="/order/{{ id }}">
+            <input type="submit" value="Comprar">
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
