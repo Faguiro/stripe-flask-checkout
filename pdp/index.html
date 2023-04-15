@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Produto</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Inclua aqui qualquer outro arquivo CSS ou JS que você precise -->
+  
+  <!-- Adicione o arquivo CSS do Slick.js -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+<!-- Adicione o arquivo JavaScript do jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Adicione o arquivo JavaScript do Slick.js -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+  <style>
+    
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Adicione aqui seu cabeçalho, se necessário -->
+  </header>
+  
+  <main>
+    <div class="product-images">
+        <div class="slick-slider">
+          <img src="img1.jpg">
+          <img src="img2.jpg">
+          <img src="img3.jpg">
+          <img src="img4.jpg">
+          <img src="img5.jpg">
+        </div>
+      </div>
+    
+    <div class="product-details">
+      <h1>Nome do Produto</h1>
+      <p>Descrição do Produto</p>
+      
+      <h2>Formas de Pagamento</h2>
+      <ul>
+        <li>Cartão de Crédito</li>
+        <li>Boleto Bancário</li>
+        <li>Transferência Bancária</li>
+      </ul>
+      
+      <h2>Desconto</h2>
+      <p>Informe o código de desconto para ganhar 10% de desconto em sua compra!</p>
+      
+      <h2>Frete</h2>
+      <p>Calcule o frete para sua região:</p>
+      <form>
+        <input type="text" placeholder="Digite o CEP">
+        <button type="submit">Calcular Frete</button>
+      </form>
+      
+      <h2>Preço</h2>
+      <p>R$ 99,99</p>
+      
+      <button class="buy-button">Comprar</button>
+    </div>
+  </main>
+  
+  <footer>
+    <!-- Adicione aqui seu rodapé, se necessário -->
+  </footer>
+  <script>
+    $(document).ready(function(){
+  $('.slick-slider').slick({
+    arrows: true,
+    dots: true,
+    autoplay: true,
+    autoplaySpeed: 5000
+  });
+});
+  </script>
+</body>
+</html>
