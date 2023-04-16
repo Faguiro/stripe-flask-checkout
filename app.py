@@ -10,16 +10,12 @@ from datetime import datetime
 
 load_dotenv()
 
-
-# Criar instância do aplicativo Flask
 app = Flask(__name__)
 
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'  
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'  # Configurar URL do banco de dados
+db = SQLAlchemy(app)  
 
-db = SQLAlchemy(app)  # Inicializar a extensão SQLAlchemy com o aplicativo Flask
-
-# Definir o modelo do banco de dados
 class Produto(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     pagador = db.Column(db.String(50), nullable=False)
@@ -29,7 +25,7 @@ class Produto(db.Model):
     data = db.Column(db.DateTime, nullable=False, default=datetime.now())
 
 with app.app_context():  # Criar contexto de aplicação
-    db.create_all()  # Criar tabelas no banco de dados
+    db.create_all()  
 
 stripe.api_key = os.environ['STRIPE_SECRET_KEY']
 
